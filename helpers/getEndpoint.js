@@ -2,6 +2,7 @@
 // 'serverless deploy' and put in the file called 'deploy.out', this allows
 // getEndpoint to scan that file for the endpoint created by serverless deploy
 // Command: serverless deploy | tee deploy.out
+//
 
 fs = require('fs');
 fs.readFile(__dirname + '/../.build/deploy.out', 'utf8', function (err,data) {
