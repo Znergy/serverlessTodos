@@ -16,7 +16,7 @@ describe('Create, Delete', function() {
 
 		// Create the new todo
 		var options = {'url' : path, 'form': JSON.stringify(desiredPayload)};
- 		request.post(options, function (err, res, body){ 
+ 		request.post(options, function (err, res, body){
 			if(err){
 				throw new Error("Create call failed: " + err);
 			}
@@ -24,13 +24,13 @@ describe('Create, Delete', function() {
 			var todo = JSON.parse(res.body);
 			// Now delete the todo
 			var deletePath = path + "/" + todo.id;
-			request.del(deletePath, function (err, res, body){ 
+			request.del(deletePath, function (err, res, body){
 				if(err){
 					throw new Error("Delete call failed: " + err);
 				}
-				assert.equal(200, res.statusCode, "Delete Status Code != 200 (" + res.statusCode + ")"); 
-				done();   
-		  	});		
+				assert.equal(200, res.statusCode, "Delete Status Code != 200 (" + res.statusCode + ")");
+				done();
+		  	});
   		});
     });
 });
